@@ -27,16 +27,15 @@ class StringTest {
     }
 
     @Test
-    @DisplayName("testCharAtException")
+    @DisplayName("charAt Exception 테스트")
     void charAt() {
         char char1 = "abc".charAt(1);
         assertThat(char1).isEqualTo('b');
         assertThatExceptionOfType(IndexOutOfBoundsException.class)
-                .isThrownBy(() -> {"abc".charAt(4);})
+                .isThrownBy(() -> "abc".charAt(4))
                 .withMessageMatching("String index out of range: \\d+");
-        assertThatThrownBy(() -> {
-            "abc".charAt(4);
-        }).isInstanceOf(IndexOutOfBoundsException.class)
+        assertThatThrownBy(() -> "abc".charAt(4))
+                .isInstanceOf(IndexOutOfBoundsException.class)
                 .hasMessageContaining("String index out of range");
     }
 
