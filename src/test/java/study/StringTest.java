@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class StringTest {
+class StringTest {
 
     @Test
     void replace() {
@@ -16,8 +16,7 @@ public class StringTest {
     @Test
     void split() {
         String[] actual = "1,2".split(",");
-        assertThat(actual).contains("1");
-        assertThat(actual).contains("2");
+        assertThat(actual).contains("1").contains("2");
         assertThat(actual).containsExactly("1", "2");
     }
 
